@@ -13,3 +13,4 @@ rm -rf ~/miniconda3/miniconda.sh
 # restart console
 source ~/.bashrc
 source ~/.zshrc
+echo 'run "source ~/.bashrc", "source ~/.zshrc", or restart your terminal to activate changes.'
