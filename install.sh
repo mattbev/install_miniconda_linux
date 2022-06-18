@@ -1,8 +1,7 @@
 #!/bin/bash
 
 # processor type
-PROCESSOR_ARCHITECTURE=$(uname -p)
-echo 'found processor architecture:' $PROCESSOR_ARCHITECTURE
+PROCESSOR_ARCHITECTURE=$(uname -m)
 
 # get files
 mkdir -p ~/miniconda3
