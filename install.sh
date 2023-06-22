@@ -20,16 +20,8 @@ rm /tmp/miniconda.sh
 
 # add to path
 USER_HOME=$(cd ~ && pwd)
-if [ $MACHINE_OS = "Linux" ]; then
-    CONFIG_FILE=.bashrc
-elif [ $MACHINE_OS = "MacOSX" ]; then
-    CONFIG_FILE=.zprofile
-else
-    CONFIG_FILE=UNKNOWN
-fi
-echo "Place the following command in your user config file to add conda to your PATH:"
-echo "COMMAND: export PATH=\"$USER_HOME/miniconda3/bin:\$PATH\""
-echo "EXAMPLE WAY TO ADD IT: echo \"export PATH=\"$USER_HOME/miniconda3/bin:\$PATH\"\" >> $USER_HOME/$CONFIG_FILE"
+echo "Run the corresponding conda initialization for your shell environment:"
+echo "$USER_HOME/miniconda3/bin init"
 
 # restart console
-echo "Source your config file, e.g., \"source ~/.bashrc\", \"source ~/.zprofile\", or otherwise restart your terminal in order to activate changes."
+echo "Source your config file, e.g., \"source ~/.bashrc\", \"source ~/.zprofile\", etc., or otherwise restart your terminal in order to activate changes."
