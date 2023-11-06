@@ -19,9 +19,13 @@ bash /tmp/miniconda.sh -b -p ~/miniconda3
 rm /tmp/miniconda.sh
 
 # add to path
+CYAN='\033[1;36m'
 USER_HOME=$(cd ~ && pwd)
-echo "Run the corresponding conda initialization for your shell environment:"
-echo "$USER_HOME/miniconda3/bin init"
+echo -en "\n"
+echo -e "${CYAN}Run the corresponding conda initialization for your shell environment:"
+echo -e ">> ${CYAN}$USER_HOME/miniconda3/bin/conda init <shell name>"
+echo -e "${CYAN}where <shell name> can be found using the '--help' argument in the above command."
 
 # restart console
-echo "Source your config file, e.g., \"source ~/.bashrc\", \"source ~/.zprofile\", etc., or otherwise restart your terminal in order to activate changes."
+echo -en "\n"
+echo "After the above, source your config file, e.g., \"source ~/.bashrc\", \"source ~/.zprofile\", etc., or otherwise restart your terminal in order to activate changes."
