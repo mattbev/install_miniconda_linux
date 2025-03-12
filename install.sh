@@ -13,14 +13,20 @@ PROCESSOR_ARCHITECTURE=$(uname -m)
 
 # get files
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-$MACHINE_OS-$PROCESSOR_ARCHITECTURE.sh -O /tmp/miniconda.sh
-bash /tmp/miniconda.sh -b -p ~/miniconda3
+
+if [ -n "$1" ]; then
+	bash /tmp/miniconda.sh -b -p $1/miniconda3
+	USER_HOME=$1
+else
+	bash /tmp/miniconda.sh -b -p ~/miniconda3
+	USER_HOME=$(cd ~ && pwd)
+fi
 
 # cleanup
 rm /tmp/miniconda.sh
 
 # add to path
 CYAN='\033[1;36m'
-USER_HOME=$(cd ~ && pwd)
 echo -en "\n"
 echo -e "${CYAN}Run the corresponding conda initialization for your shell environment:"
 echo -e ">> ${CYAN}$USER_HOME/miniconda3/bin/conda init <shell name>"
